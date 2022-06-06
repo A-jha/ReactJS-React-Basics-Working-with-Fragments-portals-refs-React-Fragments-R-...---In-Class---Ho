@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div id="main">
-        <ul>
+        <ol>
           {this.cityList
             .filter(function (city) {
               return city.country === "India";
@@ -48,7 +48,7 @@ class App extends Component {
             .map((item, index) => {
               return <li key={"location" + index + 1}>{item.name}</li>;
             })}
-        </ul>
+        </ol>
       </div>
     );
   }

@@ -35,20 +35,20 @@ class App extends Component {
       { name: "Mount Abu", country: "India" },
       { name: "Tirupati", country: "India" }
     ];
-    this.myList = ["Goa","Amsterdam","New York","Darjeeling","Tokyo","Lonavala"];
 
+    this.indianCity = this.cityList.filter(function (city) {
+      return city.country === "India";
+    });
   }
   // Goa(India), Amsterdam(Netherlands), New York(USA), Darjeeling(India), Tokyo(Japan), Lonavala(India)
   render() {
     return (
       <div id="main">
         <ol>
-          <li key="location1">Goa</li>
-          <li key="location2">Darjeeling</li>
-          <li key="location3">Lonavala</li>
-          <li ley="location4">Amsterdam</li>
-          <li ley="location5">New York</li>
-          <li ley="location6">Tokyo</li>
+          {this.indianCity.map((item, index) => {
+            let tempKey = "location" + (index + 1);
+            return <li key={tempKey}>{item.name}</li>;
+          })}
         </ol>
       </div>
     );

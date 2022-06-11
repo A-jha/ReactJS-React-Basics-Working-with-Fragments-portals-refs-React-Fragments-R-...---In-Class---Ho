@@ -33,21 +33,21 @@ class App extends Component {
       { name: "Amritsar", country: "India" },
       { name: "Mussoorie", country: "India" },
       { name: "Mount Abu", country: "India" },
-      { name: "Tirupati", country: "India" },
+      { name: "Tirupati", country: "India" }
     ];
+    this.indianCity = this.cityList.filter(function (city) {
+      return city.country === "India";
+    });
   }
 
   render() {
     return (
       <div id="main">
         <ol>
-          {this.cityList
-            .filter(function (city) {
-              return city.country === "India";
-            })
-            .map((item, index) => {
-              return <li key={"location" + index + 1}>{item.name}</li>;
-            })}
+          {this.indianCity.map((item, index) => {
+            let tempKey ="location" + (index + 1);
+            return <li key={tempKey}>{item.name}</li>;
+          })}
         </ol>
       </div>
     );

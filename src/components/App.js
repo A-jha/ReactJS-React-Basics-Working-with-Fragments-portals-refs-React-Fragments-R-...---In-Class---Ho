@@ -42,12 +42,23 @@ class App extends Component {
   }
   // Goa(India), Amsterdam(Netherlands), New York(USA), Darjeeling(India), Tokyo(Japan), Lonavala(India)
   render() {
+    let i = 1;
     return (
       <div id="main">
         <ol>
           {this.indianCity.map((item, index) => {
-            let tempKey = "location" + (index + 1);
-            return <li key={tempKey}>{item.name}</li>;
+            if (
+              item.name === "Goa" ||
+              item.name === "Amsterdam" ||
+              item.name === "New York" ||
+              item.name === "Darjeeling" ||
+              item.name === "Tokyo" ||
+              item.name === "Lonavala"
+            ) {
+              let tempKey = "location" + i;
+              i++;
+              return <li key={tempKey}>{item.name}</li>;
+            }
           })}
         </ol>
       </div>

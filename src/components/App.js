@@ -17,7 +17,7 @@ class App extends Component {
       { name: "Museum Island", country: "Germany" },
       { name: "Munnar", country: "India" },
       { name: "Leh Ladakh", country: "India" },
-      { name: "Goa", country: "India" },
+      // { name: "Goa", country: "India" },
       { name: "Agra", country: "India" },
       { name: "Dalhousie", country: "India" },
       { name: "Coorg", country: "India" },
@@ -57,7 +57,11 @@ class App extends Component {
             ) {
               let tempKey = "location" + i;
               i++;
-              return <li key={tempKey}>{item.name}</li>;
+              return (
+                <li key={tempKey}>
+                  {item.name},{tempKey}
+                </li>
+              );
             }
           })}
         </ol>
